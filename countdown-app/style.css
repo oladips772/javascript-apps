@@ -1,0 +1,47 @@
+/** @format */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-image: url("https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL1doeS1pcy1zbm93LXdoaXRlLTE2MDB4OTAwLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6IjEyMDAifX19");
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  color: black;
+  text-align: center;
+  margin: 10px 10px;
+}
+
+.countdown_container {
+  display: flex;
+  align-items: center;
+}
+.countdown_container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 15px;
+}
+
+.countdown_container div .big_text {
+  font-size: 4.5rem;
+  font-weight: bold;
+}
+
+.countdown_container div span{
+    font-weight: 500;
+}
