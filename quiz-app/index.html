@@ -1,13 +1,42 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz app</title>
-    <link rel="stylesheet" href="style.css">
+<!-- @format -->
 
-</head>
-<body>
-    <h1>quiz app</h1>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz app</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="quiz_container">
+      <div class="quiz_header">
+        <h4 id="question">when was javascript launched ?</h4>
+      </div>
+      <ul>
+        <li>
+          <input type="radio" id="a" name="answer" />
+          <label for="a" id="a_text">what is a lion</label>
+        </li>
+        <li>
+          <input type="radio" id="b" name="answer" />
+          <label for="b" id="b_text">what is a lion</label>
+        </li>
+        <li>
+          <input type="radio" id="c" name="answer" />
+          <label for="c" id="c_text">what is a lion</label>
+        </li>
+        <li>
+          <input type="radio" id="d" name="answer" />
+          <label for="d" id="d_text">what is a lion</label>
+        </li>
+        <li>
+          <input type="radio" id="a" name="answer" />
+          <label for="a">what is a lion</label>
+        </li>
+      </ul>
+      <button id="submitBtn">submit</button>
+    </div>
+  </body>
 </html>

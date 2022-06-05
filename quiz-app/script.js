@@ -1,0 +1,83 @@
+/** @format */
+const quizData = [
+  {
+    question: "What is the capital of India?",
+    a: "New Delhi",
+    b: "Mumbai",
+    c: "Chennai",
+    d: "Kolkata",
+    correct: "b",
+  },
+  {
+    question: "What is the capital of USA?",
+    a: "New Delhi",
+    b: "Mumbai",
+    c: "los angeles",
+    d: "new york",
+    correct: "b",
+  },
+  {
+    question: "What is the best laptop product company?",
+    a: "Apple",
+    b: "Dell",
+    c: "HP",
+    d: "Lenovo",
+    correct: "b",
+  },
+  {
+    question: "What is the best mobile product company?",
+    a: "Apple",
+    b: "Samsung",
+    c: "Nokia",
+    d: "LG",
+    correct: "b",
+  },
+  {
+    question: "What does HTML stands for?",
+    a: "Hyper Text Markup Language",
+    b: "Hyper Text Multipurpose Language",
+    c: "Hyper Text Monetary Language",
+    d: "Hyper Text Markin Language",
+    correct: "a",
+  },
+  {
+    question: "what year was javasript launched",
+    a: "1995",
+    b: "1996",
+    c: "1997",
+    d: "1998",
+    correct: "a",
+  },
+];
+
+const question = document.getElementById("question");
+const a_text = document.getElementById("a_text");
+const b_text = document.getElementById("b_text");
+const c_text = document.getElementById("c_text");
+const d_text = document.getElementById("d_text");
+const submitBtn = document.getElementById("submitBtn");
+let currrentQuiz = 0;
+loadQuiz();
+
+function loadQuiz() {
+  const currentQuizData = quizData[currrentQuiz];
+  question.innerText = currentQuizData.question;
+  (a_text.innerText = currentQuizData.a),
+    (b_text.innerText = currentQuizData.b),
+    (c_text.innerText = currentQuizData.c),
+    (d_text.innerText = currentQuizData.d);
+}
+
+function getSelected() {
+  
+}
+
+submitBtn.addEventListener("click", () => {
+  currrentQuiz++;
+  if (currrentQuiz < quizData.length) {
+    loadQuiz();
+  } else {
+    // TODO create an alert box
+    alert("uve finished");
+  }
+});
