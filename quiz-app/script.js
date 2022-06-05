@@ -10,9 +10,9 @@ const quizData = [
   },
   {
     question: "What is the capital of USA?",
-    a: "New Delhi",
+    a: "Mineapolis",
     b: "Peru",
-    c: "los angeles",
+    c: "Washignton dc",
     d: "new york",
     correct: "c",
   },
@@ -22,7 +22,7 @@ const quizData = [
     b: "Lenovo",
     c: "HP",
     d: "Dell",
-    correct: "b",
+    correct: "d",
   },
   {
     question: "What is the best mobile product company?",
@@ -120,3 +120,4 @@ submitBtn.addEventListener("click", () => {
     alert("please select an answer");
   }
 });
+
