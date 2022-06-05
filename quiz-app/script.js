@@ -70,7 +70,7 @@ function loadQuiz() {
     (c_text.innerText = currentQuizData.c),
     (d_text.innerText = currentQuizData.d);
 }
-
+ 
 function getSelected() {
   let answer = undefined;
   answersEl.forEach((answerEl) => {

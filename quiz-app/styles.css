@@ -23,13 +23,38 @@ body {
   align-items: center;
 }
 
+.start_container {
+  display: flex;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.start_container button {
+  text-align: center;
+  padding: 10px;
+  width: 150px;
+  outline: none;
+  color: #00bcd4;
+  background: white;
+  border: none;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.start_container button:hover{
+  background: rgb(216, 213, 213);
+}
+
 .quiz_container {
   background: white;
   max-width: 430px;
   width: 100%;
   border-radius: 5px;
   overflow: hidden;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
