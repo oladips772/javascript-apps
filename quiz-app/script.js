@@ -57,6 +57,22 @@ const c_text = document.getElementById("c_text");
 const d_text = document.getElementById("d_text");
 const submitBtn = document.getElementById("submitBtn");
 const answersEl = document.querySelectorAll(".answer");
+
+const start = document.getElementById("start");
+const quiz_Cont = document.getElementById("quiz_container");
+const result_Cont = document.getElementById("result_container");
+const restartBtn = document.getElementById("restartBtn");
+const scoreText = document.getElementById("score");
+
+start.addEventListener("click", () => {
+  start.classList.add("inactive");
+  quiz_Cont.classList.add("active");
+});
+
+restartBtn.addEventListener("click", () => {
+  window.location.reload();
+});
+
 let currrentQuiz = 0;
 let score = 0;
 
@@ -70,7 +86,7 @@ function loadQuiz() {
     (c_text.innerText = currentQuizData.c),
     (d_text.innerText = currentQuizData.d);
 }
- 
+
 function getSelected() {
   let answer = undefined;
   answersEl.forEach((answerEl) => {
@@ -96,9 +112,9 @@ submitBtn.addEventListener("click", () => {
     if (currrentQuiz < quizData.length) {
       loadQuiz();
     } else {
-      // TODO create an alert box
-      alert("uve finished");
-      console.log(score);
+      quiz_Cont.classList.remove("active");
+      result_Cont.classList.add("active");
+      scoreText.innerText = `You scored ${score} out of ${quizData.length} questions`;
     }
   } else {
     alert("please select an answer");
