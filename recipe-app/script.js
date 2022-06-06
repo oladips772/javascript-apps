@@ -1,4 +1,6 @@
 /** @format */
+const searchTerm = document.getElementById("search_term").value;
+
 async function getRandomMeal() {
   const resp = await fetch(
     "https://www.themealdb.com/api/json/v1/1/random.php"
@@ -19,20 +21,22 @@ function addMeal(mealData) {
           alt=""
         />
         <span>'${mealData.strMeal}'</span>
+        <i class="fa fa-heart heart" aria-hidden="true"></i>
+
     `;
   }
 }
 
 getRandomMeal();
 
-async function getMealById(id) {
-  const response = await fetch(
-    "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id
-  );
-}
+// async function getMealById(id) {
+//   const response = await fetch(
+//     "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id
+//   );
+// }
 
-async function getMealBySearch(term) {
-  const response = await fetch(
-    "https://www.themealdb.com/api/json/v1/1/search.php?s=" + term
-  );
-}
+// async function getMealBySearch(searchTerm) {
+//   const response = await fetch(
+//     "https://www.themealdb.com/api/json/v1/1/search.php?s=" + searchTerm
+//   );
+// }
