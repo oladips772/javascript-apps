@@ -124,6 +124,25 @@ body {
   position: relative;
 }
 
+.random_meal p {
+  font-size: 14px;
+  margin-top: 5px;
+  font-weight: 500;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 99;
+  background: white;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.random_meal span {
+  font-weight: 500;
+  padding: 6px;
+  margin: 6px 0;
+}
+
 .random_meal img {
   height: 170px;
   width: 300px;
@@ -133,17 +152,17 @@ body {
   filter: brightness(0.9);
 }
 
-.random_meal i {
+.random_meal .heart {
   height: 26px;
   width: 26px;
   text-align: center;
   justify-content: center;
   line-height: 55px;
   font-size: 20px;
-  color: rgba(199, 178, 178, 0.856);
+  color: rgba(245, 180, 180, 0.856);
   cursor: pointer;
   position: absolute;
-  bottom: 10px;
+  bottom: 40px;
   right: 5px;
   padding: 7px;
 }
@@ -216,23 +235,6 @@ body {
   filter: brightness(0.7);
 }
 
-.random_meal p {
-  font-size: 14px;
-  margin-top: 5px;
-  font-weight: 500;
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  z-index: 99;
-  background: white;
-  padding: 3px;
-  border-radius: 5px;
-}
-
-.random_meal span {
-  font-weight: 500;
-  padding: 5px;
-}
 
 .meal_item p {
   font-size: 14px;

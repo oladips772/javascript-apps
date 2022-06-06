@@ -12,19 +12,24 @@ async function getRandomMeal() {
 }
 
 function addMeal(mealData) {
-  const randomMealDiv = document.getElementById("random_mealDiv");
+  const randomContainer = document.getElementById("random_container");
+  const randomMealDiv = document.createElement("div");
+  randomMealDiv.classList.add("random_meal");
+
   if (mealData) {
     randomMealDiv.innerHTML = `
-      <p>Random Meal</p>
-        <img
-          src="${mealData.strMealThumb}"
-          alt=""
-        />
-        <span>'${mealData.strMeal}'</span>
-        <i class="fa fa-heart heart" aria-hidden="true"></i>
-
+          <p>Random Meal</p>
+          <img src="${mealData.strMealThumb}" alt="" />
+          <span>'${mealData.strMeal}'</span>
+          <i class="fa fa-heart heart" id="heart" aria-hidden="true"></i>
     `;
+    randomContainer.appendChild(randomMealDiv);
   }
+
+  const heartBtn = randomMealDiv.querySelector(".heart");
+  heartBtn.addEventListener("click", () => {
+    heartBtn.classList.toggle("active");
+  });
 }
 
 getRandomMeal();
