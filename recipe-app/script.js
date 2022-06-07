@@ -44,14 +44,12 @@ function removeMealFromLocalStorage(mealId) {
   const mealsId = getMealsFromLocalStorage();
   mealsId.splice(mealsId.indexOf(mealId), 1);
   localStorage.setItem("mealsId", JSON.stringify(mealsId));
-  getFavoriteMeals();
 }
 
 function addMealsToLocalStorage(mealId) {
   const mealsId = getMealsFromLocalStorage();
   mealsId.push(mealId);
   localStorage.setItem("mealsId", JSON.stringify(mealsId));
-  getFavoriteMeals();
 }
 
 function getMealsFromLocalStorage() {
@@ -70,13 +68,35 @@ async function getMealById(id) {
 
 async function getFavoriteMeals() {
   const mealsId = getMealsFromLocalStorage();
-  const meals = [];
   for (i = 0; i < mealsId.length; i++) {
     const mealId = mealsId[i];
     const meal = await getMealById(mealId);
-    meals.push(meal);
+    addMealToFavorite(meal);
   }
-  console.log(meals);
+}
+
+async function addMealToFavorite(meal) {
+  const mealsContainer = document.getElementById("favorite_meals");
+  const MealDiv = document.createElement("div");
+  MealDiv.classList.add("fav_meal");
+
+  if (meal) {
+    MealDiv.innerHTML = `
+            <img
+              src="${meal.strMealThumb}"
+              alt=""
+            />
+            <p>${meal.strMeal}</p>
+            <i class="fa fa-trash" aria-hidden="true"></i>
+    `;
+  }
+
+  mealsContainer.appendChild(MealDiv);
+
+  const trashBtn = MealDiv.querySelector(".fa-trash");
+  trashBtn.addEventListener("click", () => {
+    
+  });
 }
 
 // async function getMealBySearch(searchTerm) {
