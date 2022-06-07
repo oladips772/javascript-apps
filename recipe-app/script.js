@@ -1,5 +1,7 @@
 /** @format */
 const searchTerm = document.getElementById("search_term").value;
+const mealsContainer = document.getElementById("favorite_meals");
+
 async function getRandomMeal() {
   const resp = await fetch(
     "https://www.themealdb.com/api/json/v1/1/random.php"
@@ -37,6 +39,8 @@ function addMeal(mealData) {
       addMealsToLocalStorage(mealData.idMeal);
       heartBtn.classList.add("active");
     }
+    mealsContainer.innerHTML = "";
+    getFavoriteMeals();
   });
 }
 
@@ -76,7 +80,6 @@ async function getFavoriteMeals() {
 }
 
 async function addMealToFavorite(meal) {
-  const mealsContainer = document.getElementById("favorite_meals");
   const MealDiv = document.createElement("div");
   MealDiv.classList.add("fav_meal");
 
@@ -95,7 +98,7 @@ async function addMealToFavorite(meal) {
 
   const trashBtn = MealDiv.querySelector(".fa-trash");
   trashBtn.addEventListener("click", () => {
-    
+    removeMealFromLocalStorage(meal.idMeal);
   });
 }
 
