@@ -52,8 +52,11 @@ body {
 
 .search_header i {
   font-size: 14px;
-  padding: 5px;
+  padding: 8px;
   color: gray;
+  cursor: pointer;
+  background: lavender;
+  border-radius: 50%;
 }
 
 .search_header input {
