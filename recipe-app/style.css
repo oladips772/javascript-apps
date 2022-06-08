@@ -18,12 +18,13 @@ body {
 .mobile_container {
   max-height: 580px;
   width: 300px;
-  height: 100%;
+  height: 700px;
   background: white;
   border-radius: 15px;
   overflow-y: scroll;
   scrollbar-width: 0px;
   padding: 10px;
+  position: relative;
 }
 .mobile_container::-webkit-scrollbar {
   display: none;
@@ -105,7 +106,11 @@ body {
   border-radius: 50%;
   background-blend-mode: darken;
   filter: brightness(0.7);
-  /* margin-right: -25px; */
+}
+
+.fav_meal p{
+  font-size: 13.2px;
+  font-weight: 500;
 }
 
 .fav_meal i {
@@ -123,8 +128,10 @@ body {
 }
 
 .random_meal {
-  margin-top: 13px;
   position: relative;
+  cursor: pointer;
+  margin: 10px 0;
+  background: whitesmoke;
 }
 
 .random_meal p {
@@ -205,54 +212,75 @@ body {
   font-weight: 500;
 }
 
-/** meals container */
-
-.meals_container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10px;
-  border-radius: 6px;
-}
-
-.meal_item {
-  position: relative;
-  cursor: pointer;
-  margin: 10px 0;
-  background: whitesmoke;
-}
-
-.random_meal {
-  position: relative;
-  cursor: pointer;
-  margin: 10px 0;
-  background: whitesmoke;
-}
-
-.meals_container .meal_item img {
-  height: 180px;
-  width: 300px;
-  object-fit: cover;
-  border-radius: 10px;
-  background-blend-mode: darken;
-  filter: brightness(0.7);
-}
-
-
-.meal_item p {
-  font-size: 14px;
-  margin-top: 5px;
-  font-weight: 500;
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  z-index: 99;
+/* * meal info */
+.meal_info_container {
+  position: fixed;
+  top: 60;
+  z-index: 99999;
   background: white;
-  padding: 3px;
-  border-radius: 5px;
+  height: 572.5px;
+  width: inherit;
+  overflow: hidden;
+  display: none;
+  overflow-y: scroll;
 }
 
-.meal_item span {
-  font-weight: 500;
-  padding: 5px;
+.meal_info_container::-webkit-scrollbar {
+  display: none;
+}
+
+.meal_info_container.active{
+  display: block;
+}
+
+.meal_info_container .meal_info .meal_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 10px;
+}
+
+.meal_header h3 {
+  font-size: 13px;
+  color: rgb(54, 52, 52);
+}
+
+.meal_header i {
+  font-size: 20px;
+  color: rgba(204, 15, 15, 0.856);
+  cursor: pointer;
+  padding: 6px;
+}
+
+.meal_info img {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 7px;
+}
+
+.meal_info p{
+  margin: 5px 0px;
+}
+
+.meal_info span {
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+  justify-content: center;
+  text-transform: uppercase;
+  margin-top: 10px !important;
+  color: grey;
+}
+
+.meal_info ul {
+}
+
+.meal_info ul li {
+  list-style-type: disc !important;
+  margin-left: 10px;
+  color: black;
 }

@@ -2,6 +2,7 @@
 const searchTerm = document.getElementById("search_term");
 const mealsContainer = document.getElementById("favorite_meals");
 const searchBtn = document.getElementById("search_btn");
+const mealPopUp = document.getElementById("meal_info_container");
 
 async function getRandomMeal() {
   const resp = await fetch(
@@ -30,6 +31,9 @@ function addMeal(mealData) {
   }
 
   randomContainer.appendChild(randomMealDiv);
+  randomMealDiv.addEventListener("click", () => {
+    showMealInfo(mealData);
+  });
 
   const heartBtn = randomMealDiv.querySelector(".heart");
   heartBtn.addEventListener("click", () => {
@@ -42,6 +46,7 @@ function addMeal(mealData) {
     }
     getFavoriteMeals();
   });
+
 }
 
 function removeMealFromLocalStorage(mealId) {
@@ -123,3 +128,37 @@ searchBtn.addEventListener("click", async () => {
     });
   }
 });
+
+function showMealInfo(meal) {
+  const mealInfo = document.createElement("div");
+  mealPopUp.classList.add("active");
+  mealInfo.classList.add("meal_info");
+
+  mealInfo.innerHTML = `
+   <div class="meal_header">
+            <h3>${meal.strMeal}</h3>
+            <i class="fas fa-times close_btn"></i>
+          </div>
+          <img
+            src="${meal.strMealThumb}"
+            alt=""
+          />
+          <span>description</span>
+          <p>
+            ${meal.strInstructions}
+          </p>
+          <span>INGREDIENTS</span>
+          <ul>
+            <li>Pork meat</li>
+            <li>sesame seeds</li>
+            <li>red chili</li>
+          </ul>
+  `;
+  mealPopUp.appendChild(mealInfo);
+
+  const closeBtn = mealInfo.querySelector(".close_btn");
+  closeBtn.addEventListener("click", () => {
+    mealPopUp.innerHTML = ""
+    mealPopUp.classList.remove("active");
+  });
+}
