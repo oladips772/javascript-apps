@@ -98,6 +98,7 @@ body {
   border-radius: 4px;
   margin: 6px 0;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .fav_meal img {
@@ -215,10 +216,10 @@ body {
 /* * meal info */
 .meal_info_container {
   position: fixed;
-  top: 60;
-  z-index: 99999;
+  top: 33.43;
+  z-index: 99;
   background: white;
-  height: 572.5px;
+  height: 599.2px;
   width: inherit;
   overflow: hidden;
   display: none;
@@ -240,6 +241,8 @@ body {
   padding: 4px;
   border-bottom: 1px solid lightgray;
   margin-bottom: 10px;
+  padding-top: 10px;
+  margin-top: 23px;
 }
 
 .meal_header h3 {
@@ -252,6 +255,14 @@ body {
   color: rgba(204, 15, 15, 0.856);
   cursor: pointer;
   padding: 6px;
+  transition: 0.3s ease;
+  transition-delay: 0.2s;
+}
+
+.meal_header i:hover{
+  transform: rotate(-360deg);
+    transition: 0.3s ease;
+  transition-delay: 0.2s;
 }
 
 .meal_info img {
@@ -277,6 +288,7 @@ body {
 }
 
 .meal_info ul {
+  margin-bottom: 10px;
 }
 
 .meal_info ul li {

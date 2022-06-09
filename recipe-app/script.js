@@ -31,7 +31,7 @@ function addMeal(mealData) {
   }
 
   randomContainer.appendChild(randomMealDiv);
-  randomMealDiv.addEventListener("click", () => {
+  randomMealDiv.querySelector("img").addEventListener("click", () => {
     showMealInfo(mealData);
   });
 
@@ -46,7 +46,6 @@ function addMeal(mealData) {
     }
     getFavoriteMeals();
   });
-
 }
 
 function removeMealFromLocalStorage(mealId) {
@@ -100,6 +99,10 @@ async function addMealToFavorite(meal) {
     `;
   }
 
+  MealDiv.querySelector("p").addEventListener("click", () => {
+    showMealInfo(meal);
+  });
+
   mealsContainer.appendChild(MealDiv);
 
   const trashBtn = MealDiv.querySelector(".fa-trash");
@@ -133,6 +136,17 @@ function showMealInfo(meal) {
   const mealInfo = document.createElement("div");
   mealPopUp.classList.add("active");
   mealInfo.classList.add("meal_info");
+  const ingredients = [];
+
+  for (let i = 1; i <= 20; i++) {
+    if (meal["strIngredient" + i]) {
+      ingredients.push(
+        `${meal["strIngredient" + i]}${" - "}${meal["strMeasure" + i]}`
+      );
+    } else {
+      break;
+    }
+  }
 
   mealInfo.innerHTML = `
    <div class="meal_header">
@@ -149,16 +163,14 @@ function showMealInfo(meal) {
           </p>
           <span>INGREDIENTS</span>
           <ul>
-            <li>Pork meat</li>
-            <li>sesame seeds</li>
-            <li>red chili</li>
+          ${ingredients.map((ing) => `<li>${ing}</li>`).join(" ")}
           </ul>
   `;
   mealPopUp.appendChild(mealInfo);
 
   const closeBtn = mealInfo.querySelector(".close_btn");
   closeBtn.addEventListener("click", () => {
-    mealPopUp.innerHTML = ""
+    mealPopUp.innerHTML = "";
     mealPopUp.classList.remove("active");
   });
 }
