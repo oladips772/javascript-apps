@@ -8,6 +8,12 @@
   box-sizing: border-box;
 }
 
+p {
+  color: white;
+  margin-right: 70px;
+  font-weight: 500;
+}
+
 body {
   background: linear-gradient(
     190deg,
@@ -17,6 +23,10 @@ body {
     rgb(14, 178, 207) 90%
   );
   min-height: 100vh;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .notes {
@@ -38,7 +48,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 120px;
+  width: 100px;
   border-radius: 3px;
   padding: 5px;
   font-weight: 500;
@@ -46,8 +56,8 @@ button {
   transition: all 0.2s;
 }
 
-button:hover{
-    background: whitesmoke;
+button:hover {
+  background: whitesmoke;
 }
 
 button i {
@@ -60,13 +70,21 @@ button i {
   height: 340px;
   border-radius: 5px;
   overflow: hidden;
-  background: white;
-  overflow-y: scroll;
   box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
   position: relative;
+  overflow-y: scroll;
+  padding: 5px;
 }
 
 .note::-webkit-scrollbar {
+  display: none;
+}
+
+.note .main::-webkit-scrollbar {
+  display: none;
+}
+
+.note textarea::-webkit-scrollbar {
   display: none;
 }
 
@@ -79,6 +97,18 @@ button i {
   width: inherit;
 }
 
+.note .main {
+  background: white;
+  width: 340px;
+  height: 340px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.note .main.active {
+  display: none;
+}
+
 .note_tools i {
   font-size: 18px;
   margin: 0 8px;
@@ -86,14 +116,31 @@ button i {
   color: white;
 }
 
+#editBtn {
+  transition: all 0.5s ease;
+  transition-delay: 0.2s;
+  transform: rotate(130deg);
+}
+
+#editBtn.active {
+  transition: all 0.5s ease;
+  transition-delay: 0.2s;
+  transform: rotate(-90deg);
+}
+
 .note textarea {
-  margin-top: 40px;
-  background-color: white;
+  background: white;
   outline: none;
   border: none;
   width: inherit;
   height: inherit;
   resize: none;
-  padding: 3px;
-  font-size: 18px;
+  padding: 5px;
+  font-size: 16px;
+  display: none;
+  border-radius: 5px;
+}
+
+.note textarea.active {
+  display: block;
 }
