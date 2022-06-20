@@ -63,7 +63,6 @@ function addNewNote(text = "") {
 
 
 
-
 function updateLocalStorage() {
   const notesText = document.querySelectorAll("textarea");
   const notes = [];
