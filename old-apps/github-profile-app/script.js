@@ -21,6 +21,7 @@ async function showUser() {
   const userData = await getUser(searchTerm.value);
   const userCard = document.createElement("div");
   userCard.classList = "user_card";
+
   if (userData) {
     userCard.innerHTML = `
   <img
@@ -31,7 +32,7 @@ async function showUser() {
             <h3>${userData.name}</h3>
             <div class="stat">
               <i class="fa fa-star"></i>
-              // <span>{}</span>
+              <span>${userData.public_repos}</span>
             </div>
             <div class="stat">
               <i class="fa-solid fa-users"></i>
