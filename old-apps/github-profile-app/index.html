@@ -13,29 +13,16 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>Github Profile Api</title>
   </head>
   <body>
     <div class="profile_container">
-      <div class="profile_card">
-        <div class="profile_search_container">
-          <input type="text" placeholder="username" />
-          <button class="profile_search_button">Search</button>
-        </div>
-        <div class="user_card">
-          <!-- <img
-            src="https://avatars.githubusercontent.com/u/78825477?v=4"
-            alt=""
-          /> -->
-          <div class="stats_div">
-            <h4>Oladipupo Akorede</h4>
-            <div class="rep"></div>
-            <div class="folls"></div>
-            <div class="bio"></div>
-          </div>
-        </div>
+      <div class="profile_search_container">
+        <input type="text" placeholder="username" id="search" />
+        <button class="profile_search_button" id="searchBtn">Search</button>
       </div>
+      <div class="profile_card" id="profile_card"></div>
     </div>
   </body>
 </html>
