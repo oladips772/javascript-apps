@@ -1,5 +1,4 @@
 /** @format */
-
 const quizData = [
   {
     question: "What is the capital of India?",
@@ -70,8 +69,8 @@ startBtn.onclick = () => {
 };
 
 restartBtn.onclick = () => {
-  window.location.reload()
-}
+  window.location.reload();
+};
 
 let currrentQuiz = 0;
 let score = 0;
@@ -125,8 +124,4 @@ submitBtn.onclick = () => {
   }
 };
 
-
-function changeBackground() {
-  
-}
-
+function changeBackground() {}
